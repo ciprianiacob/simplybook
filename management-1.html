@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IFrame Content</title>
+</head>
+<body>
+    <!-- Hidden form that automatically submits on page load -->
+    <form id="myForm" action="parent_page.html" method="post" style="display: none;" target="_parent">
+        <input type="hidden" name="iframeAction" value="updateParentContent">
+        <input type="hidden" name="data" value="Data from iframe">
+    </form>
+    
+    <script>
+        // Automatically submit the form when the iframe content is loaded
+        window.onload = function() {
+            document.getElementById('myForm').submit();
+        };
+    </script>
+</body>
+</html>
